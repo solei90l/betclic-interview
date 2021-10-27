@@ -13,6 +13,7 @@ node {
   
         stage("docker-compose build ") {
          
+          sh'sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose'
           sh'/usr/local/bin/docker-compose build'
            
         }
