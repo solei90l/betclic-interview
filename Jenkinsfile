@@ -5,7 +5,7 @@ pipeline {
         stage('Building the project') {
             steps {
                 sh 'docker-compose build'
-                sh echo 'Project builded'
+                sh ' echo "Project builded" '
             }
         }
         stage('Test') {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker-compose up -d '
-                sh echo 'project depolyed to localhost:4200 '
+                sh 'echo "project depolyed to localhost:4200 " '
             }
         }
     }
