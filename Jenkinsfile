@@ -13,7 +13,7 @@ node {
   
         stage("docker-compose build ") {
          
-          sh'docker-compose build'
+          sh'/usr/local/bin/docker-compose build'
            
         }
     }
@@ -23,7 +23,7 @@ node {
   
         stage("docker-compose up ") {
        
-          sh'docker-compose up'
+          sh'/usr/local/bin/docker-compose up -d '
           sh 'echo Site available   in : http://63.33.196.224:3000/'
            
         }
