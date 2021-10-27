@@ -13,7 +13,7 @@ node {
   
         stage("docker-compose build ") {
          
-          sh'docker-compose build'
+          sh'./Makefile'
            
         }
     }
