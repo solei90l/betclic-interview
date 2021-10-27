@@ -1,23 +1,11 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Building the project') {
-            steps {
-                sh " docker-compose build   "
-               
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh " docker-compose up -d "
-               
-            }
-        }
+node {  
+    stage('Build') { 
+        sh " docker-compose build   "
+    }
+    stage('Test') { 
+         echo " Testing.."
+    }
+    stage('Deploy') { 
+         sh " docker-compose up -d "
     }
 }
