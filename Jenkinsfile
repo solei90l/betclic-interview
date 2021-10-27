@@ -17,12 +17,3 @@ node {
            
         }
     }
-node {
-  
-        stage("docker-compose up ") {
-       
-          sh'docker-compose up'
-          sh 'echo Site available   in : http://betclic-network:4200'
-           
-        }
-    }
