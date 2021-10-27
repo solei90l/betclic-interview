@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  betclic-homework:
+    container_name: betclic-homework
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=local
+    volumes:
+      - './src:/usr/src/app/src'
+    ports:
+      - 4200:4200
+    networks:
+      - betclic-homework-network
+
+networks:
+  betclic-homework-network:
+    driver: bridge
