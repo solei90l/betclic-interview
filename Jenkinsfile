@@ -13,10 +13,18 @@ node {
   
         stage("docker-compose build ") {
          
-          sh'docker-compose stop && \
-		docker-compose \
-			-f docker-compose.yml \
-	up --build -d --remove-orphans '
+          sh'docker-compose build'
+           
+        }
+    }
+
+
+node {
+  
+        stage("docker-compose up ") {
+       
+          sh'docker-compose up'
+          sh 'echo Site available   in : http://63.33.196.224:3000/'
            
         }
     }
