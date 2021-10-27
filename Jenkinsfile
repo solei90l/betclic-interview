@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Building the project') {
             steps {
-                sh 'docker-compose build'
-                sh ' echo "Project builded" '
+                sh " docker-compose build "
+               
             }
         }
         stage('Test') {
@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker-compose up -d '
-                sh 'echo "project depolyed to localhost:4200 " '
+                sh " docker-compose up -d "
+               
             }
         }
     }
