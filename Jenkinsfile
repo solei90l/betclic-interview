@@ -1,11 +1,28 @@
-node {  
-    stage('Build') { 
-        sh " docker-compose build   "
+node {
+  
+        stage("yarn install 1") {
+         
+          sh'npm install'
+           
+        }
     }
-    stage('Test') { 
-         echo " Testing.."
+
+
+
+node {
+  
+        stage("docker-compose build ") {
+         
+          sh'docker-compose build'
+           
+        }
     }
-    stage('Deploy') { 
-         sh " docker-compose up -d "
+node {
+  
+        stage("docker-compose up ") {
+       
+          sh'docker-compose up'
+          sh 'echo Site available   in : http://betclic-network:4200'
+           
+        }
     }
-}
